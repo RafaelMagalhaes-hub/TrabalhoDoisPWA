@@ -1,0 +1,33 @@
+﻿@model Buffet.ViewModels.Acesso.CadastrarViewModels
+
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<div class="text-center">
+    <span class="display-4">Cadastrar</span><br /><br />
+
+    <a asp-controller="Acesso" asp-action="Login">Voltar ao login</a>
+    <br>
+    <a asp-controller="Acesso" asp-action="RecuperarConta">Recuperar Conta</a>
+    <br /><br />
+    <center>
+        @if (Model.mensagem !=null){
+            <span>@Model.mensagem</span>        
+        }
+        <form method="post" style="margin-top:50px;margin-bottom:120px;background-color:rgb(217,251,221); text-align:left; border-style:solid; border-color:black; border-width:4px; padding:12px; width:550px;">
+            <h4 style="text-align:center;">Insira abaixo seus dados para realizar o cadastramento:</h4><br>
+            <div class="form-group">
+                <label style="line-height:40px;height:40px;" for="email">Email:&nbsp;&nbsp;</label>
+                <input style="width:300px; float:right; position:relative; right:0%;" type="email" class="form-control" name="email" id="email" placeholder="Insira aqui seu email">
+            </div>
+            <div class="form-group">
+                <label style="line-height:40px; height:40px;" for="senha">Senha:&nbsp;&nbsp;</label>
+                <input style="width:300px; float:right; position:relative; right:0%;" required type="password" class="form-control" name="senha" id="senha" placeholder="Insira aqui sua senha">
+            </div>
+            <div style="text-align:center;">
+                <button name="idButton" id="idButton" value="1" type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+        </form>
+    </center>
+</div>
